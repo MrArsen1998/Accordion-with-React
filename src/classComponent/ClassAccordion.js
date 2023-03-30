@@ -5,11 +5,12 @@ class Accordion extends Component {
         super(props);
         this.state = { data: [], flag: false };
     }
-
+    
     handleClick = () => {
         this.setState((state) => {
             return { flag: !state.flag }
         })
+
     }
     render() {
         const { flag } = this.state
@@ -20,7 +21,7 @@ class Accordion extends Component {
                     <div className="accordion-item">
                         <div className="accordion-title">
                             <div className='title'>{name}</div>
-                            <button className='plus' onClick={this.handleClick}>+</button>
+                            <button className='button' onClick={this.handleClick}>{flag?'-':'+'}</button>
                         </div>
                         <div className={flag ? "active" : "accordion-content"}>{capital}</div>
                     </div>
